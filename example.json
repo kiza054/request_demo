@@ -1,0 +1,11 @@
+{
+	"language" : "Python",
+	"framework" : "Flask",
+	"website" : "Scotch",
+	"version_info" : {
+		"python" : 3.4,
+		"flask" : 1.0
+	},
+	"examples" : ["Jinja2", "Werkzeug", "WTF-Forms"],
+	"boolean_test" : true
+}

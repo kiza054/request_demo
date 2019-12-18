@@ -2,11 +2,14 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+	return render_template('links.html')
 
 @app.route('/query-example')
 def query_example():
 	language = request.args.get('language') #if key doesn't exist, returns None
-	framework = request.args['framework'] #if key doesn't exist, returns a 400, bad request error
+	framework = request.args.get('framework') #if key doesn't exist, returns a 400, bad request error
 	website = request.args.get('website')
 
 	return render_template('query.html', language=language, \
@@ -30,7 +33,7 @@ def form_example():
 def json_example():
 	req_data = request.get_json()
 
-	# sets 'language' to None, checks if 'language' exists in JSON object and assigns to language var
+	# sets 'language' to None, checks if 'language' exists in JSON object and assigns to language variable
 	language = None
 	if 'language' in req_data:
 		language = req_data['language']
